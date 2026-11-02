@@ -1,0 +1,86 @@
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+    --bg: #101820; --card: #1b2733;
+    --text: #f1f5f9; --main: #14b8a6;
+}
+
+body {
+    font-family: Arial; background: var(--bg);
+    color: var(--text); padding: 25px;
+}
+
+body.light {
+    --bg: #eef5f4; --card: white; --text: #17252c;
+}
+
+.app { max-width: 950px; margin: auto; }
+
+header, .search, .progress, h2 {
+    display: flex; justify-content: space-between;
+    align-items: center; gap: 10px; margin-bottom: 20px;
+}
+
+h1 span { color: var(--main); }
+header p { color: #94a3b8; margin-top: 6px; }
+
+button { cursor: pointer; padding: 10px; border: 0; border-radius: 6px; }
+#theme { background: var(--card); }
+
+.stats {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 12px; margin-bottom: 20px;
+}
+
+.stats div, .form, .progress, .task {
+    background: var(--card); padding: 18px; border-radius: 10px;
+}
+
+.stats b, .stats small { display: block; margin-top: 7px; }
+.stats b { color: var(--main); font-size: 23px; }
+
+.form {
+    display: grid; grid-template-columns: 2fr 1fr 1fr 1fr auto;
+    gap: 8px; margin-bottom: 18px;
+}
+
+input, select {
+    min-width: 0; padding: 11px; border-radius: 6px;
+    border: 1px solid #334155; background: var(--card);
+    color: var(--text);
+}
+
+.form button { background: var(--main); }
+
+.search input { flex: 1; }
+
+.progress { display: block; margin-bottom: 22px; }
+.progress p { display: flex; justify-content: space-between; margin-bottom: 10px; }
+
+.bar { height: 9px; background: #334155; border-radius: 10px; }
+#bar { height: 100%; width: 0; background: var(--main); border-radius: 10px; }
+
+h2 button { background: transparent; color: #fb7185; }
+
+.task {
+    display: flex; align-items: center; gap: 12px;
+    margin-bottom: 10px; border-left: 4px solid var(--main);
+}
+
+.task-content { flex: 1; overflow-wrap: anywhere; }
+.task small { display: block; margin-top: 8px; color: #94a3b8; }
+.task.completed { opacity: .5; text-decoration: line-through; }
+
+#empty { text-align: center; padding: 30px; color: #94a3b8; }
+footer { text-align: center; margin: 30px; color: #94a3b8; }
+
+@media(max-width: 700px) {
+    .stats { grid-template-columns: 1fr 1fr; }
+    .form { grid-template-columns: 1fr 1fr; }
+    .search { flex-direction: column; }
+}
+
+@media(max-width: 450px) {
+    .form { grid-template-columns: 1fr; }
+}
