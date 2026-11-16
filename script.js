@@ -7,7 +7,6 @@ function save() {
 
 function addTask() {
     let title = document.getElementById("task").value.trim();
-
     if (!title) return alert("Enter a task!");
 
     tasks.push({
